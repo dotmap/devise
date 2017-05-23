@@ -1,7 +1,7 @@
 {
   "name": "devise",
   "version": "1.0.0",
-  "description": "A Vue.js project",
+  "description": "Making great game documentation.",
   "author": "Graham Barber <grahammbarber@gmail.com>",
   "private": true,
   "scripts": {

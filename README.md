@@ -1,6 +1,6 @@
 # devise
 
-> A Vue.js project
+> Making great game documentation.
 
 ## Build setup
 
