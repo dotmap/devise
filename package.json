@@ -9,7 +9,8 @@
     "build:js": "cross-env NODE_ENV=production rollup -c",
     "build:autoprefixer": "postcss --use autoprefixer -o public/assets/css/app.css public/assets/css/app.css",
     "build:cssnano": "cssnano public/assets/css/app.css public/assets/css/app.css",
-    "dev": "cross-env NODE_ENV=development rollup -cw"
+    "dev": "cross-env NODE_ENV=development rollup -cw",
+    "test:eslint": "eslint src/* --ext .vue --ext .js --fix; exit 0"
   },
   "dependencies": {
     "bulma": "^0.4.1",
@@ -23,6 +24,9 @@
     "babel-core": "^6.24.1",
     "cross-env": "^5.0.0",
     "cssnano-cli": "^1.0.4",
+    "eslint": "^3.19.0",
+    "eslint-config-vue": "^2.0.2",
+    "eslint-plugin-vue": "^2.0.1",
     "npm-run-all": "^4.0.1",
     "postcss-cli": "^4.0.0",
     "rollup": "^0.41.4",

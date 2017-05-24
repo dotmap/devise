@@ -2,6 +2,19 @@
 
 > Making great game documentation.
 
+## Hot tips
+
+1. If you want to get vue linting inside of VSCode, make sure you have the ESLint editor plugin installed,
+and add this to your settings.json:
+
+```json
+{
+  "eslint.validate": [
+    "vue"
+  ]
+}
+```
+
 ## Build setup
 
 ### [yarn](https://yarnpkg.com) - recommend
