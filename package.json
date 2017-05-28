@@ -10,7 +10,8 @@
     "build:autoprefixer": "postcss --use autoprefixer -o public/assets/css/app.css public/assets/css/app.css",
     "build:cssnano": "cssnano public/assets/css/app.css public/assets/css/app.css",
     "dev": "cross-env NODE_ENV=development rollup -cw",
-    "test:eslint": "eslint src/* --ext .vue --ext .js --fix; exit 0"
+    "test:eslint": "eslint src/* --ext .vue --ext .js --fix; exit 0",
+    "test:flow": "flow"
   },
   "dependencies": {
     "bulma": "^0.4.1",
@@ -22,11 +23,20 @@
   "devDependencies": {
     "autoprefixer": "^7.1.1",
     "babel-core": "^6.24.1",
+    "babel-eslint": "^7.2.3",
+    "babel-plugin-syntax-flow": "^6.18.0",
+    "babel-plugin-transform-class-properties": "^6.24.1",
+    "babel-plugin-transform-flow-strip-types": "^6.22.0",
     "cross-env": "^5.0.0",
     "cssnano-cli": "^1.0.4",
     "eslint": "^3.19.0",
     "eslint-config-vue": "^2.0.2",
+    "eslint-plugin-disable": "^0.3.0",
+    "eslint-plugin-flowtype": "^2.33.0",
+    "eslint-plugin-flowtype-errors": "^3.3.0",
+    "eslint-plugin-html": "^2.0.3",
     "eslint-plugin-vue": "^2.0.1",
+    "flow-bin": "^0.46.0",
     "npm-run-all": "^4.0.1",
     "postcss-cli": "^4.0.0",
     "rollup": "^0.41.4",
@@ -34,6 +44,7 @@
     "rollup-plugin-buble": "^0.15.0",
     "rollup-plugin-butternut": "^0.1.0",
     "rollup-plugin-commonjs": "^8.0.2",
+    "rollup-plugin-flow": "^1.1.1",
     "rollup-plugin-livereload": "^0.4.0",
     "rollup-plugin-node-globals": "^1.1.0",
     "rollup-plugin-node-resolve": "^3.0.0",

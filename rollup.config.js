@@ -1,4 +1,5 @@
 import vue from 'rollup-plugin-vue'
+import flow from 'rollup-plugin-flow'
 import alias from 'rollup-plugin-alias'
 import buble from 'rollup-plugin-buble'
 import serve from 'rollup-plugin-serve'
@@ -12,6 +13,7 @@ const plugins = [
   alias({
     vue$: 'vue/dist/vue.common.js'
   }),
+  flow(),
   vue({
     css: './public/assets/css/app.css'
   }),
