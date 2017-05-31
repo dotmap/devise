@@ -7,8 +7,8 @@
   </div>
 </template>
 
-<script>
-import Counter from 'components/Counter'
+<script lang="ts">
+import Counter from 'components/Counter.vue'
 
 export default {
   components: {
