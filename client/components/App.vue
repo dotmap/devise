@@ -4,6 +4,13 @@
   </div>
 </template>
 
+<script lang="ts">
+export default {
+  
+}
+</script>
+
+
 <style>
 body {
   margin: 0;

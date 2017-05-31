@@ -621,7 +621,7 @@ babel-plugin-transform-vue-jsx@^3.1.2:
   dependencies:
     esutils "^2.0.2"
 
-babel-preset-env, babel-preset-env@^1.2.1:
+babel-preset-env@^1.2.1, babel-preset-env@^1.5.1:
   version "1.5.1"
   resolved "https://registry.yarnpkg.com/babel-preset-env/-/babel-preset-env-1.5.1.tgz#d2eca6af179edf27cdc305a84820f601b456dd0b"
   dependencies:
@@ -4910,7 +4910,7 @@ tryit@^1.0.1:
   version "1.0.3"
   resolved "https://registry.yarnpkg.com/tryit/-/tryit-1.0.3.tgz#393be730a9446fd1ead6da59a014308f36c289cb"
 
-ts-loader:
+ts-loader@^2.1.0:
   version "2.1.0"
   resolved "https://registry.yarnpkg.com/ts-loader/-/ts-loader-2.1.0.tgz#5a8efcc5c72c06fc49d69bad69c85617c6194f77"
   dependencies:
@@ -4950,16 +4950,16 @@ typedarray@^0.0.6:
   version "0.0.6"
   resolved "https://registry.yarnpkg.com/typedarray/-/typedarray-0.0.6.tgz#867ac74e3864187b1d3d47d996a78ec5c8830777"
 
-typescript:
-  version "2.3.4"
-  resolved "https://registry.yarnpkg.com/typescript/-/typescript-2.3.4.tgz#3d38321828231e434f287514959c37a82b629f42"
-
-typescript-eslint-parser:
+typescript-eslint-parser@^3.0.0:
   version "3.0.0"
   resolved "https://registry.yarnpkg.com/typescript-eslint-parser/-/typescript-eslint-parser-3.0.0.tgz#dd0435b303abc841464c02d00184d7b39bd488b5"
   dependencies:
     lodash.unescape "4.0.1"
     semver "5.3.0"
+
+typescript@^2.3.4:
+  version "2.3.4"
+  resolved "https://registry.yarnpkg.com/typescript/-/typescript-2.3.4.tgz#3d38321828231e434f287514959c37a82b629f42"
 
 uglify-js@^2.7.5:
   version "2.8.27"
@@ -4971,8 +4971,8 @@ uglify-js@^2.7.5:
     uglify-to-browserify "~1.0.0"
 
 uglify-js@3.0.x:
-  version "3.0.13"
-  resolved "https://registry.yarnpkg.com/uglify-js/-/uglify-js-3.0.13.tgz#1871d736aa1e550c728d7e5a6556579e70925d68"
+  version "3.0.14"
+  resolved "https://registry.yarnpkg.com/uglify-js/-/uglify-js-3.0.14.tgz#2697af126fd215aac556facb1edfb17875204760"
   dependencies:
     commander "~2.9.0"
     source-map "~0.5.1"
@@ -4981,7 +4981,7 @@ uglify-to-browserify@~1.0.0:
   version "1.0.2"
   resolved "https://registry.yarnpkg.com/uglify-to-browserify/-/uglify-to-browserify-1.0.2.tgz#6e0924d6bda6b5afe349e39a6d632850a0f882b7"
 
-uglifyjs-webpack-plugin:
+uglifyjs-webpack-plugin@^0.4.3:
   version "0.4.3"
   resolved "https://registry.yarnpkg.com/uglifyjs-webpack-plugin/-/uglifyjs-webpack-plugin-0.4.3.tgz#a672a7d6655f94dfa7e09670d48030f37cc93267"
   dependencies:
@@ -5166,6 +5166,10 @@ vue-template-es2015-compiler@^1.2.2:
 vue@^2.2.0:
   version "2.3.3"
   resolved "https://registry.yarnpkg.com/vue/-/vue-2.3.3.tgz#d1eaa8fde5240735a4563e74f2c7fead9cbb064c"
+
+vuex-class:
+  version "0.2.0"
+  resolved "https://registry.yarnpkg.com/vuex-class/-/vuex-class-0.2.0.tgz#84fb2f34ddbf7384381576ed3222b3d2abad5649"
 
 vuex-router-sync@^4.0.0:
   version "4.1.3"
