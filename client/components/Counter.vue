@@ -14,7 +14,7 @@ import Vue from 'vue'
 import { Component } from 'vue-property-decorator'
 
 @Component
-export default class App extends Vue {
+export default class Counter extends Vue {
   get count (): Number {
     return this.$store.state.count
   }
