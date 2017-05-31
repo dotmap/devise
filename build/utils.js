@@ -67,6 +67,9 @@ _.loadersOptions = () => {
           stylus: generateLoader(['stylus-loader?sourceMap']),
           js: 'babel-loader'
         }
+      },
+      ts: {
+        appendTsSuffixTo: [/\.vue$/]
       }
     }
   }

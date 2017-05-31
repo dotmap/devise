@@ -1,9 +1,17 @@
-import './promise-polyfill'
-import { app } from './app'
+import Vue from 'vue'
+import { sync } from 'vuex-router-sync'
+import App from './components/App.vue'
+import router from './router'
+import store from './store'
 
-// Enable progressive web app support (with offline-plugin)
-if (process.env.NODE_ENV === 'production') {
-  require('./pwa')
-}
+sync(store, router)
+
+const app = new Vue({
+  router,
+  store,
+  render: h => h(App)
+})
 
 app.$mount('#app')
+
+export { app, router, store }
