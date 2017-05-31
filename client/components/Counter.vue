@@ -10,11 +10,13 @@
 </template>
 
 <script lang="ts">
-export default {
-  computed: {
-    count() {
-      return this.$store.state.count
-    }
+import Vue from 'vue'
+import { Component } from 'vue-property-decorator'
+
+@Component
+export default class App extends Vue {
+  get count (): Number {
+    return this.$store.state.count
   }
 }
 </script>

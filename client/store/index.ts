@@ -3,21 +3,25 @@ import Vuex from 'vuex'
 
 Vue.use(Vuex)
 
-const state = {
+interface state {
+  count: number;
+}
+
+const state: state = {
   count: 0
 }
 
 const mutations = {
-  INCREMENT(state) {
+  INCREMENT(state: state) {
     state.count++
   },
-  DECREMENT (state) {
+  DECREMENT (state: state) {
     state.count--
   }
 }
 
 const actions = {
-  incrementAsync ({ commit }) {
+  incrementAsync ({ commit }: { commit: Function }) {
     setTimeout(() => {
       commit('INCREMENT')
     }, 200)
