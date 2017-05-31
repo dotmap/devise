@@ -6,7 +6,7 @@ const webpack = require('webpack')
 const ExtractTextPlugin = require('extract-text-webpack-plugin')
 const ProgressPlugin = require('webpack/lib/ProgressPlugin')
 const UglifyJsPlugin = require('uglifyjs-webpack-plugin')
-const OfflinePlugin = require('offline-plugin')
+const HTMLPluginRemove = require('html-webpack-plugin-remove')
 const base = require('./webpack.base')
 const pkg = require('../package')
 const _ = require('./utils')
@@ -31,6 +31,7 @@ base.plugins.push(
   new webpack.DefinePlugin({
     'process.env.NODE_ENV': JSON.stringify('production')
   }),
+  new HTMLPluginRemove(/<script src="http:\/\/localhost:1337\/vorlon.js"><\/script>/),
   new UglifyJsPlugin({
     sourceMap: true,
     compress: {

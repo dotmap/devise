@@ -5,8 +5,9 @@
   "main": "client/index.js",
   "scripts": {
     "test": "",
+    "vorlon": "vorlon",
     "build": "webpack --config build/webpack.prod.js",
-    "build:types": "vuetype client", 
+    "build:types": "vuetype client",
     "watch:types": "vuetype client -w",
     "dev": "node build/server.js",
     "lint": "xo **/client/**/*.{vue,js} !node_modules/**"
@@ -52,6 +53,7 @@
     "file-loader": "^0.9.0",
     "friendly-errors-webpack-plugin": "^1.1.2",
     "html-webpack-plugin": "^2.22.0",
+    "html-webpack-plugin-remove": "^0.0.3",
     "offline-plugin": "^4.5.3",
     "postcss-loader": "^0.9.1",
     "postcss-nested": "^1.0.0",
@@ -61,6 +63,7 @@
     "ts-loader": "^2.1.0",
     "typescript-eslint-parser": "^3.0.0",
     "uglifyjs-webpack-plugin": "^0.4.3",
+    "vorlon": "^0.5.4",
     "vue-class-component": "^5.0.1",
     "vue-loader": "^11.0.0",
     "vue-property-decorator": "^5.0.1",
