@@ -6,6 +6,8 @@
   "scripts": {
     "test": "",
     "build": "webpack --config build/webpack.prod.js",
+    "build:types": "vuetype client", 
+    "watch:types": "vuetype client -w",
     "dev": "node build/server.js",
     "lint": "xo **/client/**/*.{vue,js} !node_modules/**"
   },
@@ -63,6 +65,7 @@
     "vue-loader": "^11.0.0",
     "vue-property-decorator": "^5.0.1",
     "vue-template-compiler": "^2.2.0",
+    "vuetype": "^0.2.2",
     "webpack": "2.2.0",
     "webpack-dev-middleware": "^1.8.1",
     "webpack-hot-middleware": "^2.12.2",
