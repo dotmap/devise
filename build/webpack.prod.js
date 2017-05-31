@@ -5,6 +5,7 @@ const exec = require('child_process').execSync
 const webpack = require('webpack')
 const ExtractTextPlugin = require('extract-text-webpack-plugin')
 const ProgressPlugin = require('webpack/lib/ProgressPlugin')
+const UglifyJsPlugin = require('uglifyjs-webpack-plugin')
 const OfflinePlugin = require('offline-plugin')
 const base = require('./webpack.base')
 const pkg = require('../package')
@@ -30,7 +31,7 @@ base.plugins.push(
   new webpack.DefinePlugin({
     'process.env.NODE_ENV': JSON.stringify('production')
   }),
-  new webpack.optimize.UglifyJsPlugin({
+  new UglifyJsPlugin({
     sourceMap: true,
     compress: {
       warnings: false
@@ -48,16 +49,16 @@ base.plugins.push(
   }),
   new webpack.optimize.CommonsChunkPlugin({
     name: 'manifest'
-  }),
+  })
   // progressive web app
   // it uses the publicPath in webpack config
-  new OfflinePlugin({
-    relativePaths: false,
-    AppCache: false,
-    ServiceWorker: {
-      events: true
-    }
-  })
+  // new OfflinePlugin({
+  //   relativePaths: false,
+  //   AppCache: false,
+  //   ServiceWorker: {
+  //     events: true
+  //   }
+  // })
 )
 
 // extract css in standalone css files
