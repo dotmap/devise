@@ -8,11 +8,12 @@
 </template>
 
 <script lang="ts">
+import Vue from 'vue'
+import { Component } from 'vue-property-decorator'
 import Counter from 'components/Counter.vue'
 
-export default {
-  components: {
-    Counter
-  }
+@Component
+export default class Home extends Vue {
+  components = { Counter }
 }
 </script>
