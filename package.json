@@ -10,22 +10,10 @@
     "build:types": "vuetype client",
     "watch:types": "vuetype client -w",
     "dev": "node build/server.js",
-    "lint": "xo **/client/**/*.{vue,js} !node_modules/**"
+    "lint": "tslint ./**/*.ts -p ./tsconfig.json -t stylish"
   },
   "author": "Graham Barber <grahammbarber@gmail.com>",
   "license": "MIT",
-  "xo": {
-    "parser": "typescript-eslint-parser",
-    "extends": "vue",
-    "rules": {
-      "import/no-unresolved": 0,
-      "import/no-unassigned-import": 0
-    },
-    "esnext": true,
-    "envs": [
-      "browser"
-    ]
-  },
   "dependencies": {
     "promise-polyfill": "^6.0.2",
     "typescript": "^2.3.4",

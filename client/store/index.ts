@@ -3,25 +3,29 @@ import Vuex from 'vuex'
 
 Vue.use(Vuex)
 
-interface state {
+interface IState {
   count: number;
 }
 
-const state: state = {
+interface ICommit {
+  commit(mutationType: string): any
+}
+
+const state: IState = {
   count: 0
 }
 
 const mutations = {
-  INCREMENT(state: state) {
+  INCREMENT(state: IState) {
     state.count++
   },
-  DECREMENT (state: state) {
+  DECREMENT(state: IState) {
     state.count--
   }
 }
 
 const actions = {
-  incrementAsync ({ commit }: { commit: Function }) {
+  incrementAsync({ commit }: ICommit) {
     setTimeout(() => {
       commit('INCREMENT')
     }, 200)
@@ -29,9 +33,9 @@ const actions = {
 }
 
 const store = new Vuex.Store({
-  state,
+  actions,
   mutations,
-  actions
+  state
 })
 
 export default store

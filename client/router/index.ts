@@ -8,8 +8,8 @@ export default new Router({
   mode: 'hash',
   routes: [
     {
-      path: '/',
-      component: Home
+      component: Home,
+      path: '/'
     }
   ]
 })
