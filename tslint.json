@@ -19,7 +19,11 @@
                 "singleline": "never"
             }
         ],
-        "no-shadowed-variable": false
+        "no-shadowed-variable": false,
+        "arrow-parens": [
+            true,
+            "ban-single-arg-parens"
+        ]
     },
     "rulesDirectory": []
 }
