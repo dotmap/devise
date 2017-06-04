@@ -4,7 +4,7 @@ import Vuex from 'vuex'
 Vue.use(Vuex)
 
 interface IState {
-  count: number;
+  count: number
 }
 
 interface ICommit {
@@ -25,10 +25,13 @@ const mutations = {
 }
 
 const actions = {
-  incrementAsync({ commit }: ICommit) {
-    setTimeout(() => {
-      commit('INCREMENT')
-    }, 200)
+   async incrementAsync({ commit }: ICommit) {
+    return new Promise((resolve, reject) => {
+      setTimeout(() => {
+        commit('INCREMENT')
+        resolve()
+      }, 200)
+    })
   }
 }
 

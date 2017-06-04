@@ -17,7 +17,8 @@
     "allowSyntheticDefaultImports": true
   },
   "include": [
-    "./client/**/*.ts"
+    "./client/**/*.ts",
+    "./test/**/*.ts"
   ],
   "exclude": [
     "node_modules"
