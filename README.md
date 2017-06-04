@@ -1,4 +1,4 @@
-# devise
+# vuepack-typescript
 
 ## Commands
 
