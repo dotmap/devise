@@ -11,7 +11,14 @@ $ yarn
 To develop:
 
 ```bash
-$ yarn run dev```
+$ yarn run dev
+```
+
+To run Jest tests:
+
+```bash
+$ yarn test
+```
 
 To build for production:
 
