@@ -1,5 +1,7 @@
 # devise
 
+## Commands
+
 To install dependencies:
 
 ```bash
@@ -40,6 +42,11 @@ To launch Vorlon to inspect your app:
 ```bash
 $ yarn run vorlon
 ```
+
+## Known Caveats
+
+When you build for production, UglifyJS will return an error, but your app will build properly. If you can figure out
+how to fix the error (because as long as everything works I don't care to try), please do so and file a merge request.
 
 ---
 
