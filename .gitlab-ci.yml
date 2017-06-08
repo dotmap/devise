@@ -1,0 +1,17 @@
+# Official framework image. Look for the different tagged releases at:
+# https://hub.docker.com/r/library/node/tags/
+image: node:latest
+
+before_script:
+  - apt-get update -qq
+  - apt-get install -qy libelf1
+  - npm install -g --quiet yarn
+  - yarn
+
+test:
+  script:
+    - npm test
+
+build:
+  script:
+    - npm run build
