@@ -7,7 +7,7 @@ import store from '../client/store'
 
 describe('Default state', () => {
   test('count', () => {
-    expect(store.state.count).toBe(0))
+    expect(store.state.count).toBe(0)
   })
 })
 

@@ -11,7 +11,7 @@
     "build:files": "webpack --config build/webpack.prod.js",
     "watch:types": "vuetype client -w",
     "watch:files": "node build/server.js",
-    "test:lint": "tslint ./**/*.ts -p ./tsconfig.json -t stylish",
+    "test:lint": "tslint -p ./tsconfig.json -t stylish",
     "test:unit": "jest",
     "vorlon": "vorlon"
   },
