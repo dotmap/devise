@@ -24,7 +24,7 @@
     ]
   },
   "author": "Graham Barber <grahammbarber@gmail.com>",
-  "license": "MIT",
+  "license": "Apache-2.0",
   "dependencies": {
     "promise-polyfill": "^6.0.2",
     "typescript": "^2.3.4",
