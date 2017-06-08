@@ -5,7 +5,7 @@ const exec = require('child_process').execSync
 const webpack = require('webpack')
 const ExtractTextPlugin = require('extract-text-webpack-plugin')
 const ProgressPlugin = require('webpack/lib/ProgressPlugin')
-const UglifyJsPlugin = require('uglifyjs-webpack-plugin')
+const BabiliPlugin = require('babili-webpack-plugin')
 const HTMLPluginRemove = require('html-webpack-plugin-remove')
 const base = require('./webpack.base')
 const pkg = require('../package')
@@ -32,15 +32,7 @@ base.plugins.push(
     'process.env.NODE_ENV': JSON.stringify('production')
   }),
   new HTMLPluginRemove(/<script src="http:\/\/localhost:1337\/vorlon.js"><\/script>/),
-  new UglifyJsPlugin({
-    sourceMap: true,
-    compress: {
-      warnings: false
-    },
-    output: {
-      comments: false
-    }
-  }),
+  new BabiliPlugin(),
   // extract vendor chunks
   new webpack.optimize.CommonsChunkPlugin({
     name: 'vendor',
