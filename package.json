@@ -1,7 +1,7 @@
 {
-  "name": "vuepack-typescript",
-  "version": "1.0.0",
-  "description": "Modification of egoist's vuepack template with Typescript instead of ES6.",
+  "name": "devise",
+  "version": "0.1.0",
+  "description": "A tool for creating great game documentation.",
   "main": "client/index.js",
   "scripts": {
     "test": "jest",
@@ -26,7 +26,6 @@
   "author": "Graham Barber <grahammbarber@gmail.com>",
   "license": "Apache-2.0",
   "dependencies": {
-    "promise-polyfill": "^6.0.2",
     "typescript": "^2.3.4",
     "vue": "^2.2.0",
     "vue-router": "^2.0.0",
@@ -44,8 +43,6 @@
     "copy-webpack-plugin": "^4.0.1",
     "cross-env": "^2.0.0",
     "css-loader": "^0.23.1",
-    "eslint-config-vue": "latest",
-    "eslint-plugin-vue": "latest",
     "express": "^4.14.0",
     "extract-text-webpack-plugin": "^2.0.0-rc.3",
     "file-loader": "^0.9.0",
