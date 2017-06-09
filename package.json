@@ -12,7 +12,7 @@
     "watch:types": "vuetype client -w",
     "watch:files": "node build/server.js",
     "test:lint": "tslint -p ./tsconfig.json -t stylish",
-    "test:unit": "jest",
+    "test:unit": "jest --coverage",
     "vorlon": "vorlon"
   },
   "jest": {

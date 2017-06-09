@@ -10,8 +10,21 @@ before_script:
 
 test:
   script:
-    - npm test
+    - yarn test
 
 build:
   script:
-    - npm run build
+    - yarn run build
+
+pages:
+  stage: deploy
+  script:
+    - yarn run test:unit
+    - yarn run build
+    - mkdir .public && mkdir .public/coverage
+    - cp -r dist .public
+    - mv coverage/lcov-report .public/coverage
+    - mv .public public
+  artifacts:
+    paths:
+      - public
