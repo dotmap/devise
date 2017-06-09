@@ -18,15 +18,15 @@ build:
   script:
     - yarn run build
 
-pages:
-  stage: deploy
-  script:
-    - yarn run test:unit
-    - yarn run build
-    - mkdir .public && mkdir .public/coverage
-    - cp -r dist .public
-    - mv coverage/lcov-report .public/coverage
-    - mv .public public
-  artifacts:
-    paths:
-      - public
+# pages:
+#   stage: deploy
+#   script:
+#     - yarn run test:unit
+#     - yarn run build
+#     - mkdir .public && mkdir .public/coverage
+#     - cp -r dist .public
+#     - mv coverage/lcov-report .public/coverage
+#     - mv .public public
+#   artifacts:
+#     paths:
+#       - public
