@@ -8,18 +8,22 @@ const _ = require('./utils')
 
 module.exports = {
   entry: {
-    client: './client/index.ts'
+    client: './client/index.js'
   },
   output: {
     path: _.outputPath,
     filename: '[name].js',
-    publicPath: config.publicPath
+    publicPath: config.publicPath,
+    // Point sourcemap entries to original disk location
+    devtoolModuleFilenameTemplate: info => path.resolve(info.absoluteResourcePath),
+    // Add /* filename */ comments to generated require()s in the output.
+    pathinfo: true
   },
   performance: {
     hints: process.env.NODE_ENV === 'production' ? 'warning' : false
   },
   resolve: {
-    extensions: ['.js', '.ts', '.vue', '.css', '.json'],
+    extensions: ['.js', '.vue', '.css', '.json'],
     alias: {
       root: path.join(__dirname, '../client'),
       components: path.join(__dirname, '../client/components')
@@ -36,14 +40,6 @@ module.exports = {
       {
         test: /\.vue$/,
         loaders: ['vue-loader']
-      },
-      {
-        test: /\.ts$/,
-        exclude: [/node_modules|vue|\/src/],
-        loaders: ['ts-loader']
-        // options: {
-        //   appendTsSuffixTo: [/\.vue$/]
-        // }
       },
       {
         test: /\.js$/,

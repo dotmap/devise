@@ -9,22 +9,12 @@
   </div>
 </template>
 
-<script lang="ts">
-import Vue from 'vue'
-import { State } from 'vuex-class'
-import { Component } from 'vue-property-decorator'
-
-@Component
-export default class Counter extends Vue {
-
-  @State('count') Count: number
-
-  created () {
-    this.Count
-  }
-
-  get count (): Number {
-    return this.Count
+<script>
+export default {
+  computed: {
+    count() {
+      return this.$store.state.count
+    }
   }
 }
 </script>

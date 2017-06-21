@@ -7,12 +7,12 @@
   </div>
 </template>
 
-<script lang="ts">
-import Vue from 'vue'
-import { Component } from 'vue-property-decorator'
-import Counter from '../components/Counter.vue'
+<script>
+import Counter from 'components/Counter'
 
-@Component({components: {Counter}})
-export default class Home extends Vue {
+export default {
+  components: {
+    Counter
+  }
 }
 </script>

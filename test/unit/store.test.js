@@ -1,8 +1,3 @@
-declare const jest
-declare const test
-declare const describe
-declare const expect
-
 import store from '../client/store'
 
 describe('Default state', () => {
