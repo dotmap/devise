@@ -18,9 +18,12 @@ const mutations = {
 
 const actions = {
   incrementAsync ({ commit }) {
-    setTimeout(() => {
-      commit('INCREMENT')
-    }, 200)
+    return new Promise(resolve => {
+      setTimeout(() => {
+        commit('INCREMENT')
+        resolve()
+      }, 200)
+    })
   }
 }
 

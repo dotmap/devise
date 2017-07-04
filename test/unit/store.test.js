@@ -1,4 +1,4 @@
-import store from '../client/store'
+import store from '../../client/store'
 
 describe('Default state', () => {
   test('count', () => {
