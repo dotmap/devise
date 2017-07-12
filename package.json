@@ -9,7 +9,6 @@
     "test": "run-p test:*",
     "test:e2e": "testcafe all test/e2e/index.js --app \"npm run dev\" --app-init-delay 10000",
     "test:lint": "xo **/client/**/*.{vue,js} !node_modules/**",
-    "test:type": "flow",
     "test:unit": "jest --coverage"
   },
   "author": "Graham Barber <grahambarber@gmail.com>",
@@ -71,7 +70,6 @@
     "express": "^4.14.0",
     "extract-text-webpack-plugin": "^2.0.0-rc.3",
     "file-loader": "^0.9.0",
-    "flow-bin": "^0.49.1",
     "friendly-errors-webpack-plugin": "^1.1.2",
     "html-webpack-plugin": "^2.22.0",
     "husky": "^0.14.2",

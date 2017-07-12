@@ -1,4 +1,3 @@
-/* @flow */
 import Vue from 'vue'
 import Vuex from 'vuex'
 
@@ -9,11 +8,11 @@ const state = {
 }
 
 const mutations = {
-  INCREMENT (state): Number {
-    state.count++
+  INCREMENT (state) {
+    return state.count++
   },
-  DECREMENT (state): Number {
-    state.count--
+  DECREMENT (state) {
+    return state.count--
   }
 }
 
