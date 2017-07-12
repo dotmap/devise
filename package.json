@@ -9,6 +9,7 @@
     "test": "run-p test:*",
     "test:e2e": "testcafe all test/e2e/index.js --app \"npm run dev\" --app-init-delay 10000",
     "test:lint": "xo **/client/**/*.{vue,js} !node_modules/**",
+    "test:type": "flow",
     "test:unit": "jest --coverage"
   },
   "author": "Graham Barber <grahambarber@gmail.com>",
@@ -83,6 +84,7 @@
     "rimraf": "^2.6.1",
     "style-loader": "^0.13.1",
     "testcafe": "^0.12.1",
+    "testcafe-browser-provider-nightmare": "^0.0.4",
     "vue-loader": "^11.0.0",
     "vue-template-compiler": "^2.2.0",
     "webpack": "2.2.0",
