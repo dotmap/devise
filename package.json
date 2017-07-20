@@ -7,18 +7,15 @@
     "build": "webpack --config build/webpack.prod.js",
     "dev": "node build/server.js",
     "test": "run-p test:*",
-    "test:e2e": "testcafe all test/e2e/index.js --app \"npm run dev\" --app-init-delay 10000",
     "test:lint": "xo **/client/**/*.{vue,js} !node_modules/**",
-    "test:unit": "jest --coverage"
+    "test:unit": "npx cypress run"
   },
   "author": "Graham Barber <grahambarber@gmail.com>",
   "license": "Apache-2.0",
   "xo": {
     "extends": "./.eslintrc",
     "esnext": true,
-    "envs": [
-      "browser"
-    ]
+    "envs": ["browser"]
   },
   "babel": {
     "presets": [
@@ -36,10 +33,7 @@
       "postcss-nested": {}
     }
   },
-  "browserslist": [
-    "last 2 versions",
-    "ie > 8"
-  ],
+  "browserslist": ["last 2 versions", "ie > 8"],
   "dependencies": {
     "babel-runtime": "^6.18.0",
     "promise-polyfill": "^6.0.2",
@@ -68,7 +62,6 @@
     "friendly-errors-webpack-plugin": "^1.1.2",
     "html-webpack-plugin": "^2.22.0",
     "husky": "^0.14.2",
-    "jest": "^20.0.4",
     "npm-run-all": "^4.0.2",
     "offline-plugin": "^4.5.3",
     "postcss-loader": "^0.9.1",
@@ -76,8 +69,6 @@
     "raw-loader": "^0.5.1",
     "rimraf": "^2.6.1",
     "style-loader": "^0.13.1",
-    "testcafe": "^0.12.1",
-    "testcafe-browser-provider-nightmare": "^0.0.4",
     "vue-loader": "^11.0.0",
     "vue-template-compiler": "^2.2.0",
     "webpack": "2.2.0",
