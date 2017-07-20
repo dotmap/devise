@@ -1,7 +1,6 @@
 {
-  "parser": "babel-eslint",
   "extends": "vue",
-  "plugins": ["testcafe", "flowtype"],
+  "plugins": ["testcafe"],
   "rules": {
     "import/no-unresolved": 0,
     "import/no-unassigned-import": 0
