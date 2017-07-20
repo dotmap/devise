@@ -9,7 +9,8 @@ $ npm install
 To develop:
 
 ```bash
-$ npm run dev```
+$ npm run dev
+```
 
 To build for production:
 
@@ -23,6 +24,8 @@ To lint you code:
 $ npm run lint
 ```
 
+>> Please note that this project is released with a Contributor Code of Conduct.
+>> By participating in this project you agree to abide by its terms.
 
 ---
 
