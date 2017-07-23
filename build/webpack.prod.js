@@ -1,23 +1,22 @@
 'use strict'
 process.env.NODE_ENV = 'production'
 
-const exec = require('child_process').execSync
 const webpack = require('webpack')
 const ExtractTextPlugin = require('extract-text-webpack-plugin')
 const ProgressPlugin = require('webpack/lib/ProgressPlugin')
-const BabiliPlugin = require('babili-webpack-plugin')
-const HTMLPluginRemove = require('html-webpack-plugin-remove')
+const OfflinePlugin = require('offline-plugin')
+const rm = require('rimraf')
 const base = require('./webpack.base')
 const pkg = require('../package')
 const _ = require('./utils')
 const config = require('./config')
 
 if (config.electron) {
-  // remove dist folder in electron mode
-  exec('rm -rf app/assets/')
+  // remove files in dist folder in electron mode
+  rm.sync('app/assets/*')
 } else {
   // remove dist folder in web app mode
-  exec('rm -rf dist/')
+  rm.sync('dist/*')
   // use source-map in web app mode
   base.devtool = 'source-map'
 }
@@ -31,8 +30,15 @@ base.plugins.push(
   new webpack.DefinePlugin({
     'process.env.NODE_ENV': JSON.stringify('production')
   }),
-  new HTMLPluginRemove(/<script src="http:\/\/localhost:1337\/vorlon.js"><\/script>/),
-  new BabiliPlugin(),
+  new webpack.optimize.UglifyJsPlugin({
+    sourceMap: true,
+    compress: {
+      warnings: false
+    },
+    output: {
+      comments: false
+    }
+  }),
   // extract vendor chunks
   new webpack.optimize.CommonsChunkPlugin({
     name: 'vendor',
@@ -42,16 +48,16 @@ base.plugins.push(
   }),
   new webpack.optimize.CommonsChunkPlugin({
     name: 'manifest'
-  })
+  }),
   // progressive web app
   // it uses the publicPath in webpack config
-  // new OfflinePlugin({
-  //   relativePaths: false,
-  //   AppCache: false,
-  //   ServiceWorker: {
-  //     events: true
-  //   }
-  // })
+  new OfflinePlugin({
+    relativePaths: false,
+    AppCache: false,
+    ServiceWorker: {
+      events: true
+    }
+  })
 )
 
 // extract css in standalone css files
