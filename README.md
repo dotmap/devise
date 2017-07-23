@@ -89,8 +89,8 @@ And again you'd need to tell what the previous code actually does.
 
 ## Contributing
 
->> Please note that this project is released with a Contributor Code of Conduct.
->> By participating in this project you agree to abide by its terms.
+> Please note that this project is released with a Contributor Code of Conduct.
+> By participating in this project you agree to abide by its terms.
 
 ## Versioning
 
@@ -166,7 +166,7 @@ Licensed under the Apache License, Version 2.0 (the "License");
 you may not use this file except in compliance with the License.
 You may obtain a copy of the License at
 
->>  http://www.apache.org/licenses/LICENSE-2.0
+>  http://www.apache.org/licenses/LICENSE-2.0
 
 Unless required by applicable law or agreed to in writing, software
 distributed under the License is distributed on an "AS IS" BASIS,
