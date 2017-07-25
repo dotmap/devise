@@ -6,16 +6,24 @@ const webpackHotMiddleware = require('webpack-hot-middleware')
 
 const config = require('./webpack.dev')
 
+config.entry.client = [
+  'webpack-hot-middleware/client?reload=true',
+  config.entry.client
+]
+
 const compiler = webpack(config)
 const middleware = next => {
   const mw = webpackMiddleware(compiler, {
-    publicPath: config.output.publicPath
+    publicPath: config.output.publicPath,
+    quiet: true
   })
   return (req, res) => mw(req, res, () => next(req, res))
 }
 
 const hotMiddleware = next => {
-  const mw = webpackHotMiddleware(compiler)
+  const mw = webpackHotMiddleware(compiler, {
+    log: () => {}
+  })
   return (req, res) => mw(req, res, () => next(req, res))
 }
 
