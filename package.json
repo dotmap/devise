@@ -17,9 +17,10 @@
   "xo": {
     "extends": "./.eslintrc",
     "esnext": true,
-    "envs": [
-      "browser"
-    ]
+    "envs": ["browser"],
+    "parserOptions": {
+      "ecmaVersion": 2017
+    }
   },
   "babel": {
     "presets": [
@@ -37,10 +38,7 @@
       "postcss-nested": {}
     }
   },
-  "browserslist": [
-    "last 2 versions",
-    "ie > 8"
-  ],
+  "browserslist": ["last 2 versions", "ie > 8"],
   "dependencies": {
     "babel-runtime": "^6.18.0",
     "promise-polyfill": "^6.0.2",
@@ -71,6 +69,7 @@
     "friendly-errors-webpack-plugin": "^1.1.2",
     "html-webpack-plugin": "^2.22.0",
     "husky": "^0.14.2",
+    "micro": "^7.3.3",
     "npm-run-all": "^4.0.2",
     "offline-plugin": "^4.5.3",
     "postcss-loader": "^0.9.1",
