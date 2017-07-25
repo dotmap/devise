@@ -3,19 +3,56 @@ const path = require('path')
 const webpack = require('webpack')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
 const CopyWebpackPlugin = require('copy-webpack-plugin')
-const config = require('./config')
-const _ = require('./utils')
+const ExtractTextPlugin = require('extract-text-webpack-plugin')
+
+const cwd = file => {
+  return path.join(process.cwd(), file || '')
+}
+
+const loadersOptions = () => {
+  const isProd = process.env.NODE_ENV === 'production'
+
+  function generateLoader (langs) {
+    langs.unshift('css-loader?sourceMap&-autoprefixer')
+    if (!isProd) {
+      return ['vue-style-loader'].concat(langs).join('!')
+    }
+    return ExtractTextPlugin.extract({
+      fallback: 'vue-style-loader',
+      use: langs.join('!')
+    })
+  }
+
+  return {
+    minimize: isProd,
+    options: {
+      // Get context for css-loader
+      context: process.cwd(),
+      vue: {
+        loaders: {
+          css: generateLoader([]),
+          sass: generateLoader(['sass-loader?indentedSyntax&sourceMap']),
+          scss: generateLoader(['sass-loader?sourceMap']),
+          less: generateLoader(['less-loader?sourceMap']),
+          stylus: generateLoader(['stylus-loader?sourceMap']),
+          js: 'babel-loader'
+        }
+      }
+    }
+  }
+}
 
 module.exports = {
   entry: {
     client: './client/index.js'
   },
   output: {
-    path: _.outputPath,
+    path: path.join(__dirname, '../dist'),
     filename: '[name].js',
-    publicPath: config.publicPath,
+    publicPath: '/',
     // Point sourcemap entries to original disk location
-    devtoolModuleFilenameTemplate: info => path.resolve(info.absoluteResourcePath),
+    devtoolModuleFilenameTemplate: info =>
+      path.resolve(info.absoluteResourcePath),
     // Add /* filename */ comments to generated require()s in the output.
     pathinfo: true
   },
@@ -29,10 +66,9 @@ module.exports = {
       components: path.join(__dirname, '../client/components')
     },
     modules: [
-      _.cwd('node_modules'),
-      // this meanse you can get rid of dot hell
-      // for example import 'components/Foo' instead of import '../../components/Foo'
-      _.cwd('client')
+      // Dot hell elimination
+      cwd('node_modules'),
+      cwd('client')
     ]
   },
   module: {
@@ -60,23 +96,26 @@ module.exports = {
       {
         test: /\.svg$/,
         loader: 'raw-loader'
+      },
+      {
+        test: /\.sass$/,
+        loaders: ['style-loader', 'css-loader', 'sass-loader']
       }
     ]
   },
   plugins: [
     new HtmlWebpackPlugin({
-      title: config.title,
+      title: 'Devise',
       template: path.resolve(__dirname, 'index.html'),
-      filename: _.outputIndexPath
+      filename: path.join(__dirname, '../dist/index.html')
     }),
-    new webpack.LoaderOptionsPlugin(_.loadersOptions()),
+    new webpack.LoaderOptionsPlugin(loadersOptions()),
     new CopyWebpackPlugin([
       {
-        from: _.cwd('./static'),
-        // to the roor of dist path
+        from: cwd('./static'),
         to: './'
       }
     ])
   ],
-  target: _.target
+  target: 'web'
 }
