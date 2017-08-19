@@ -26,6 +26,7 @@ jobs:
           # fallback to using the latest cache if no exact match is found
           - v1-dependencies-
 
+      - run: npm install pm2
       - run: npm install cypress-cli
 
       - run: yarn install
@@ -35,7 +36,11 @@ jobs:
             - node_modules
           key: v1-dependencies-{{ checksum "package.json" }}
         
-      # start dev server
-      - run: yarn dev
+      # start dev server with pm2
+      - run: npx pm2 start --name="devise" npm -- dev:simple 
+
+      - run: npx pm2 list
       # run tests!
       - run: yarn test
+
+      - run: npx pm2 delete all
