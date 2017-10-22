@@ -1,6 +1,8 @@
 *[maybe someday a project logo]*
 
 # Devise
+
+[![Greenkeeper badge](https://badges.greenkeeper.io/multi-cell/devise.svg)](https://greenkeeper.io/)
 > Write better game docs.
 
 Devise is an open-source tool for creating, organized, searchable, and
