@@ -1,6 +1,8 @@
 [submodule "devise-ante"]
 	path = devise-ante
 	url = https://github.com/multi-cell/devise-ante
+	branch = master
 [submodule "devise-tergo"]
 	path = devise-tergo
 	url = https://github.com/multi-cell/devise-tergo
+	branch = master
