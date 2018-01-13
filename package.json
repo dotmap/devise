@@ -1,0 +1,12 @@
+{
+  "name": "devise",
+  "version": "0.0.1",
+  "description": "A tool for making great game documentation.",
+  "main": "index.js",
+  "repository": "git@github.com:multi-cell/devise",
+  "author": "Graham Barber <grahammbarber@gmail.com>",
+  "license": "Apache-2.0",
+  "dependencies": {
+    "foreman": "^2.0.0"
+  }
+}
